@@ -149,7 +149,7 @@ namespace Sequencer
         }
         private void timer1_Tick(object sender, EventArgs e)
         {
-           
+
 
 
 
@@ -178,7 +178,7 @@ namespace Sequencer
                 parcel.Release();
                 did_something = true;
             }
-            if(down_parcels.Where(p=>p.Exit).Count() == down_parcels.Count())
+            if (down_parcels.Where(p => p.Exit).Count() == down_parcels.Count())
             {
                 foreach (var parcel in up_parcels)
                 {
@@ -189,7 +189,10 @@ namespace Sequencer
             if (did_something)
                 Clock++;
 
+
+
             var exited = Parcels.Where(p => p.Exit);
+            
             foreach (var parcel in exited)
             {
                 parcel.Release();
@@ -197,7 +200,9 @@ namespace Sequencer
             }
 
 
+
         }
+
 
         private void button4_Click(object sender, EventArgs e)
         {

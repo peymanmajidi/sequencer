@@ -13,8 +13,8 @@ namespace Sequencer.Models
         const int SIZE = 50;
         const int GAP = 21;
         const int INSIDE = 27;
-        const int LEFT = 895;
-        const int TOP = 307;
+        const int LEFT = 1050;
+        const int TOP = 232;
 
 
         public int Index { get; set; }
@@ -96,7 +96,7 @@ namespace Sequencer.Models
             if (Button.Location.X < -SIZE)
             {
                 Exit = true;
-                Button.Location = new Point( 1200,510); 
+                Button.Location = new Point( 1200,492); 
             }
 
         }

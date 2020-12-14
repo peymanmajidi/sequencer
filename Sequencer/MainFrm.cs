@@ -34,6 +34,8 @@ namespace Sequencer
 
         private void button1_Click(object sender, EventArgs e)
         {
+            Release(sender, e);
+
             foreach (var parcel in Parcels)
             {
                 parcel.Shift();
@@ -150,15 +152,8 @@ namespace Sequencer
         private void timer1_Tick(object sender, EventArgs e)
         {
 
-
-
-
             Push(sender, e);
-            if (Parcels.Where(p => p.Placed).Count() == Parcels.Count())
-                Release(sender, e);
-
-
-
+            Release(sender, e);
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
@@ -168,7 +163,10 @@ namespace Sequencer
 
         private void Release(object sender, EventArgs e)
         {
-            bool did_something = false;
+            if (Parcels.Where(p => p.Placed).Count() != Parcels.Count())
+                return;
+
+                bool did_something = false;
             var down_parcels = Parcels.Where(p => p.Gate.Row == Row.DOWN && p.Placed && !p.Exit);
             var up_parcels = Parcels.Where(p => p.Gate.Row == Row.UP && p.Placed && !p.Exit);
 

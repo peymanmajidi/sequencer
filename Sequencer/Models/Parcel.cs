@@ -31,6 +31,7 @@ namespace Sequencer.Models
             Button.BackColor = Color.FromArgb(100, new Random().Next(0, 255), new Random().Next(0, 255));
             Button.Font = new Font("Arial", 15);
             Button.FlatStyle = FlatStyle.Popup;
+            Button.ForeColor = Color.Black;
 
 
             Gate = MainFrm.Gates.FirstOrDefault(s => s.Index == index);

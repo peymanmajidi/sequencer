@@ -35,7 +35,6 @@ namespace Sequencer
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.lblClock = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -72,7 +71,7 @@ namespace Sequencer
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(615, 607);
+            this.button1.Location = new System.Drawing.Point(549, 607);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(91, 63);
             this.button1.TabIndex = 0;
@@ -88,9 +87,9 @@ namespace Sequencer
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(345, 607);
+            this.button2.Location = new System.Drawing.Point(407, 607);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(78, 63);
+            this.button2.Size = new System.Drawing.Size(136, 63);
             this.button2.TabIndex = 3;
             this.button2.Text = "PUSH";
             this.button2.UseVisualStyleBackColor = false;
@@ -103,42 +102,26 @@ namespace Sequencer
             // 
             // lblClock
             // 
-            this.lblClock.AutoSize = true;
             this.lblClock.Font = new System.Drawing.Font("B Yekan", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.lblClock.Location = new System.Drawing.Point(1031, 1);
+            this.lblClock.Location = new System.Drawing.Point(1005, 1);
             this.lblClock.Name = "lblClock";
-            this.lblClock.Size = new System.Drawing.Size(78, 36);
+            this.lblClock.Size = new System.Drawing.Size(111, 36);
             this.lblClock.TabIndex = 4;
             this.lblClock.Text = "00:00";
+            this.lblClock.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // checkBox1
             // 
             this.checkBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(345, 676);
+            this.checkBox1.Location = new System.Drawing.Point(407, 676);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(48, 17);
             this.checkBox1.TabIndex = 5;
             this.checkBox1.Text = "Auto";
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
-            // 
-            // button3
-            // 
-            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.button3.BackColor = System.Drawing.Color.Gold;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.button3.ForeColor = System.Drawing.Color.Black;
-            this.button3.Location = new System.Drawing.Point(429, 607);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(180, 63);
-            this.button3.TabIndex = 6;
-            this.button3.Text = "RELEASE";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.Release);
             // 
             // button4
             // 
@@ -408,12 +391,12 @@ namespace Sequencer
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.lblClock);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button5);
+            this.ForeColor = System.Drawing.Color.Black;
             this.Name = "MainFrm";
             this.Text = "R.S.A Sequencer";
             this.Load += new System.EventHandler(this.MainFrm_Load);
@@ -429,7 +412,6 @@ namespace Sequencer
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label lblClock;
         private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Label label1;

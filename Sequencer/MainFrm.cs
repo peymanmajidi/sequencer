@@ -14,7 +14,7 @@ namespace Sequencer
     public partial class MainFrm : Form
     {
         const int GATE_WIDTH = 70;
-        const int EDGE = 173;
+        const int EDGE = 100;
 
         public static List<Gate> Gates = new List<Gate>();
 
@@ -134,19 +134,21 @@ namespace Sequencer
         }
 
         int sec = 0;
+        int min = 0;
         public int Clock
         {
             get
             {
-                return sec;
+                return sec + (min*60);
             }
             set
             {
                 sec = value;
-                if (sec < 10)
-                    lblClock.Text = "00:" + "0" + sec;
-                else
-                    lblClock.Text = "00:" + sec;
+
+                var seconds = (sec % 60) < 10 ? "0" + (sec % 60) : (sec % 60).ToString();
+                var minutes = (sec / 60) < 10 ? "0" + (sec / 60) : (sec / 60).ToString();
+
+                lblClock.Text = $"{minutes}:{seconds}";
             }
         }
         private void timer1_Tick(object sender, EventArgs e)

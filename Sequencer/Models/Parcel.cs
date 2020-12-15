@@ -40,6 +40,8 @@ namespace Sequencer.Models
 
         public void Down()
         {
+
+
             Button.Location = new Point(Button.Location.X, Button.Location.Y + Button.Width + INSIDE);
 
         }
@@ -53,7 +55,11 @@ namespace Sequencer.Models
         public void Shift()
         {
             if (Placed)
+            {
+                Button.BackgroundImage = null;
+
                 return;
+            }
 
             if (IsInSide())
             {
@@ -66,12 +72,25 @@ namespace Sequencer.Models
                 return;
             }
 
+
             Button.Location = new Point(Button.Location.X - Button.Width - GAP, Button.Location.Y);
+            if (IsInSide())
+            {
+                if (Gate.Row == Row.UP)
+                    Button.BackgroundImage = Properties.Resources.up;
+
+                else
+                    Button.BackgroundImage = Properties.Resources.down;
+
+
+
+            }
+
         }
 
         public void Release()
         {
-            if(Exit)
+            if (Exit)
             {
                 Button.Location = new Point(Button.Location.X - Button.Width - GAP, Button.Location.Y);
                 return;
@@ -82,6 +101,7 @@ namespace Sequencer.Models
 
             if (!Back)
             {
+
 
                 if (Gate.Row == Row.DOWN)
                     Up();
@@ -94,10 +114,10 @@ namespace Sequencer.Models
 
             Button.Location = new Point(Button.Location.X - Button.Width - GAP, Button.Location.Y);
 
-            if (Button.Location.X < -SIZE)
+            if (Button.Location.X < 0)
             {
                 Exit = true;
-                Button.Location = new Point( 1200,492); 
+                Button.Location = new Point(1200, 492);
             }
 
         }

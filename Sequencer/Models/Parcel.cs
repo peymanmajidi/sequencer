@@ -32,9 +32,21 @@ namespace Sequencer.Models
             Button.Font = new Font("Arial", 15);
             Button.FlatStyle = FlatStyle.Popup;
             Button.ForeColor = Color.Black;
+            if (index % 5 == 0)
+                Button.BackColor = Color.Red;
+            if (index % 10 == 0)
+                Button.BackColor = Color.Gold;
+            if (index % 6 == 0)
+                Button.BackColor = Color.LightGreen;
+
+
 
 
             Gate = MainFrm.Gates.FirstOrDefault(s => s.Index == index);
+            if (Gate == null)
+            {
+                Gate = new Gate();
+            }
 
         }
 
@@ -104,13 +116,23 @@ namespace Sequencer.Models
 
 
                 if (Gate.Row == Row.DOWN)
+                {
+                    Button.BackgroundImage = Properties.Resources.up;
+
                     Up();
+                }
                 else
+                {
+                    Button.BackgroundImage = Properties.Resources.down;
+
                     Down();
+                }
+
                 Back = true;
 
                 return;
             }
+            Button.BackgroundImage = null; ;
 
             Button.Location = new Point(Button.Location.X - Button.Width - GAP, Button.Location.Y);
 

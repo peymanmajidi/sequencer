@@ -30,13 +30,12 @@ namespace Sequencer
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainFrm));
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.lblClock = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -58,22 +57,44 @@ namespace Sequencer
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.button8 = new System.Windows.Forms.Button();
+            this.picPower = new System.Windows.Forms.PictureBox();
+            this.picLogo = new System.Windows.Forms.PictureBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.progressBar = new System.Windows.Forms.ToolStripProgressBar();
+            this.trackBar1 = new System.Windows.Forms.TrackBar();
+            this.label23 = new System.Windows.Forms.Label();
+            this.lblMiliSec = new System.Windows.Forms.Label();
+            this.panelLoad = new System.Windows.Forms.Panel();
+            this.lblLog = new System.Windows.Forms.Label();
+            this.lblPersian = new System.Windows.Forms.Label();
+            this.button9 = new System.Windows.Forms.Button();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picPower)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
+            this.statusStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
+            this.panelLoad.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.button1.BackColor = System.Drawing.Color.Aqua;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(549, 607);
+            this.button1.Location = new System.Drawing.Point(548, 587);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(91, 63);
+            this.button1.Size = new System.Drawing.Size(88, 50);
             this.button1.TabIndex = 0;
             this.button1.Text = "SHIFT";
             this.button1.UseVisualStyleBackColor = false;
@@ -81,15 +102,14 @@ namespace Sequencer
             // 
             // button2
             // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.button2.BackColor = System.Drawing.Color.Red;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(407, 607);
+            this.button2.Location = new System.Drawing.Point(333, 587);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(136, 63);
+            this.button2.Size = new System.Drawing.Size(209, 50);
             this.button2.TabIndex = 3;
             this.button2.Text = "PUSH";
             this.button2.UseVisualStyleBackColor = false;
@@ -97,49 +117,28 @@ namespace Sequencer
             // 
             // timer1
             // 
-            this.timer1.Interval = 300;
+            this.timer1.Interval = 500;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // lblClock
             // 
             this.lblClock.Font = new System.Drawing.Font("B Yekan", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.lblClock.Location = new System.Drawing.Point(1005, 1);
+            this.lblClock.Location = new System.Drawing.Point(998, 658);
             this.lblClock.Name = "lblClock";
             this.lblClock.Size = new System.Drawing.Size(111, 36);
             this.lblClock.TabIndex = 4;
             this.lblClock.Text = "00:00";
             this.lblClock.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // checkBox1
-            // 
-            this.checkBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(407, 676);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(48, 17);
-            this.checkBox1.TabIndex = 5;
-            this.checkBox1.Text = "Auto";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
-            // 
             // button4
             // 
-            this.button4.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.button4.Location = new System.Drawing.Point(-10, 217);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(1126, 80);
             this.button4.TabIndex = 7;
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(107, 142);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(721, 234);
-            this.button5.TabIndex = 8;
-            this.button5.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -323,26 +322,12 @@ namespace Sequencer
             // 
             // button6
             // 
-            this.button6.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.button6.Location = new System.Drawing.Point(-10, 478);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(1126, 80);
             this.button6.TabIndex = 29;
             this.button6.UseVisualStyleBackColor = false;
-            // 
-            // button7
-            // 
-            this.button7.BackColor = System.Drawing.Color.Red;
-            this.button7.BackgroundImage = global::Sequencer.Properties.Resources.up;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.button7.ForeColor = System.Drawing.Color.White;
-            this.button7.Location = new System.Drawing.Point(1049, 493);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(50, 50);
-            this.button7.TabIndex = 30;
-            this.button7.UseVisualStyleBackColor = false;
-            this.button7.Visible = false;
             // 
             // label21
             // 
@@ -362,11 +347,229 @@ namespace Sequencer
             this.label22.TabIndex = 32;
             this.label22.Text = " << OUTPUT";
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Black;
+            this.panel1.Controls.Add(this.button9);
+            this.panel1.Controls.Add(this.button8);
+            this.panel1.Controls.Add(this.picPower);
+            this.panel1.Controls.Add(this.picLogo);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1110, 90);
+            this.panel1.TabIndex = 233;
+            // 
+            // button8
+            // 
+            this.button8.BackColor = System.Drawing.Color.Transparent;
+            this.button8.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button8.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button8.ForeColor = System.Drawing.Color.White;
+            this.button8.Location = new System.Drawing.Point(916, 18);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(82, 56);
+            this.button8.TabIndex = 314;
+            this.button8.Text = "API";
+            this.button8.UseVisualStyleBackColor = false;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
+            // 
+            // picPower
+            // 
+            this.picPower.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.picPower.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picPower.Image = global::Sequencer.Properties.Resources.btt_off;
+            this.picPower.Location = new System.Drawing.Point(1004, 3);
+            this.picPower.Name = "picPower";
+            this.picPower.Size = new System.Drawing.Size(94, 85);
+            this.picPower.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picPower.TabIndex = 235;
+            this.picPower.TabStop = false;
+            this.picPower.Click += new System.EventHandler(this.picRuntime_Click);
+            // 
+            // picLogo
+            // 
+            this.picLogo.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.picLogo.BackColor = System.Drawing.Color.Black;
+            this.picLogo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picLogo.Image = global::Sequencer.Properties.Resources.logo;
+            this.picLogo.Location = new System.Drawing.Point(10, 20);
+            this.picLogo.Name = "picLogo";
+            this.picLogo.Size = new System.Drawing.Size(241, 49);
+            this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picLogo.TabIndex = 231;
+            this.picLogo.TabStop = false;
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.Transparent;
+            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button3.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.White;
+            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
+            this.button3.Location = new System.Drawing.Point(642, 587);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(82, 50);
+            this.button3.TabIndex = 313;
+            this.button3.Text = " ";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(107, 142);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(721, 234);
+            this.button5.TabIndex = 8;
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // button7
+            // 
+            this.button7.BackColor = System.Drawing.Color.Red;
+            this.button7.BackgroundImage = global::Sequencer.Properties.Resources.up;
+            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.button7.ForeColor = System.Drawing.Color.White;
+            this.button7.Location = new System.Drawing.Point(1049, 493);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(50, 50);
+            this.button7.TabIndex = 30;
+            this.button7.UseVisualStyleBackColor = false;
+            this.button7.Visible = false;
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel3,
+            this.toolStripStatusLabel2,
+            this.progressBar});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 694);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(1110, 22);
+            this.statusStrip1.TabIndex = 234;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // toolStripStatusLabel3
+            // 
+            this.toolStripStatusLabel3.BackColor = System.Drawing.SystemColors.Control;
+            this.toolStripStatusLabel3.ForeColor = System.Drawing.Color.Black;
+            this.toolStripStatusLabel3.Name = "toolStripStatusLabel3";
+            this.toolStripStatusLabel3.Size = new System.Drawing.Size(90, 17);
+            this.toolStripStatusLabel3.Text = "راهکار سازان آوان";
+            // 
+            // toolStripStatusLabel2
+            // 
+            this.toolStripStatusLabel2.BackColor = System.Drawing.SystemColors.Control;
+            this.toolStripStatusLabel2.ForeColor = System.Drawing.Color.Black;
+            this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
+            this.toolStripStatusLabel2.Size = new System.Drawing.Size(10, 17);
+            this.toolStripStatusLabel2.Text = "|";
+            // 
+            // progressBar
+            // 
+            this.progressBar.Name = "progressBar";
+            this.progressBar.Size = new System.Drawing.Size(300, 16);
+            this.progressBar.Step = 1;
+            // 
+            // trackBar1
+            // 
+            this.trackBar1.Location = new System.Drawing.Point(12, 637);
+            this.trackBar1.Maximum = 15;
+            this.trackBar1.Minimum = 1;
+            this.trackBar1.Name = "trackBar1";
+            this.trackBar1.Size = new System.Drawing.Size(194, 45);
+            this.trackBar1.TabIndex = 236;
+            this.trackBar1.Value = 5;
+            this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll);
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(18, 670);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(64, 13);
+            this.label23.TabIndex = 237;
+            this.label23.Text = "Line Speed:";
+            // 
+            // lblMiliSec
+            // 
+            this.lblMiliSec.Location = new System.Drawing.Point(135, 670);
+            this.lblMiliSec.Name = "lblMiliSec";
+            this.lblMiliSec.Size = new System.Drawing.Size(64, 13);
+            this.lblMiliSec.TabIndex = 238;
+            this.lblMiliSec.Text = "500 ms";
+            this.lblMiliSec.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // panelLoad
+            // 
+            this.panelLoad.BackColor = System.Drawing.Color.Gold;
+            this.panelLoad.Controls.Add(this.lblLog);
+            this.panelLoad.Controls.Add(this.lblPersian);
+            this.panelLoad.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelLoad.Location = new System.Drawing.Point(0, 90);
+            this.panelLoad.Name = "panelLoad";
+            this.panelLoad.Size = new System.Drawing.Size(1110, 46);
+            this.panelLoad.TabIndex = 314;
+            this.panelLoad.Visible = false;
+            this.panelLoad.Click += new System.EventHandler(this.panelLoad_Click);
+            this.panelLoad.Paint += new System.Windows.Forms.PaintEventHandler(this.panelLoad_Paint);
+            // 
+            // lblLog
+            // 
+            this.lblLog.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblLog.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLog.ForeColor = System.Drawing.Color.Black;
+            this.lblLog.Location = new System.Drawing.Point(8, 5);
+            this.lblLog.Name = "lblLog";
+            this.lblLog.Size = new System.Drawing.Size(340, 36);
+            this.lblLog.TabIndex = 6;
+            this.lblLog.Text = "20 Parcel(s) Loaded Successfuly";
+            this.lblLog.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblLog.Click += new System.EventHandler(this.lblLog_Click);
+            // 
+            // lblPersian
+            // 
+            this.lblPersian.Font = new System.Drawing.Font("B Nazanin", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.lblPersian.ForeColor = System.Drawing.Color.Black;
+            this.lblPersian.Location = new System.Drawing.Point(789, 4);
+            this.lblPersian.Name = "lblPersian";
+            this.lblPersian.Size = new System.Drawing.Size(312, 36);
+            this.lblPersian.TabIndex = 5;
+            this.lblPersian.Text = "ورودی متنی بارگذاری شد";
+            this.lblPersian.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.lblPersian.Click += new System.EventHandler(this.lblPersian_Click);
+            // 
+            // button9
+            // 
+            this.button9.BackColor = System.Drawing.Color.Transparent;
+            this.button9.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button9.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button9.ForeColor = System.Drawing.Color.White;
+            this.button9.Location = new System.Drawing.Point(819, 18);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(91, 56);
+            this.button9.TabIndex = 315;
+            this.button9.Text = "Entries";
+            this.button9.UseVisualStyleBackColor = false;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
+            // 
             // MainFrm
             // 
+            this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1113, 716);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(35)))), ((int)(((byte)(31)))));
+            this.ClientSize = new System.Drawing.Size(1110, 716);
+            this.Controls.Add(this.panelLoad);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.lblMiliSec);
+            this.Controls.Add(this.label23);
+            this.Controls.Add(this.trackBar1);
+            this.Controls.Add(this.statusStrip1);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.label22);
             this.Controls.Add(this.label21);
             this.Controls.Add(this.button7);
@@ -392,15 +595,24 @@ namespace Sequencer
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button4);
-            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.lblClock);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button5);
-            this.ForeColor = System.Drawing.Color.Black;
+            this.ForeColor = System.Drawing.Color.White;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "MainFrm";
             this.Text = "R.S.A Sequencer";
             this.Load += new System.EventHandler(this.MainFrm_Load);
+            this.DragDrop += new System.Windows.Forms.DragEventHandler(this.MainFrm_DragDrop);
+            this.DragEnter += new System.Windows.Forms.DragEventHandler(this.MainFrm_DragEnter);
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picPower)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
+            this.panelLoad.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -412,9 +624,7 @@ namespace Sequencer
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label lblClock;
-        private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -439,6 +649,23 @@ namespace Sequencer
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.PictureBox picLogo;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.PictureBox picPower;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.TrackBar trackBar1;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label lblMiliSec;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel3;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
+        private System.Windows.Forms.ToolStripProgressBar progressBar;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Panel panelLoad;
+        private System.Windows.Forms.Label lblLog;
+        private System.Windows.Forms.Label lblPersian;
+        private System.Windows.Forms.Button button9;
     }
 }
 

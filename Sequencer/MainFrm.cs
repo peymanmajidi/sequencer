@@ -15,26 +15,26 @@ namespace Sequencer
 {
     public partial class MainFrm : Form
     {
-        const int GATE_WIDTH = 70;
-        const int EDGE = 100;
+        // Graphical Consts
+        const int GATE_WIDTH = 70; // pixel
+        const int EDGE = 100; // pixel
+
 
         public static List<Gate> Gates = new List<Gate>();
-
-
-        public List<int> OrderTemp = new List<int>()
-        {
-            12,13,20,18,4,5,16,17,19,3,1,15,2,9,7,8,11,6,10,14
-        };
-        public Stack<int> Order = new Stack<int>();
-
-
+        public Stack<int> Stack = new Stack<int>();
         List<Parcel> Parcels = new List<Parcel>();
+        public List<int> Entries = new List<int>()
+        {
+            18,13,20,2,12,4,5,16,17,19,3,1,15,9,7,8,11,6,10,14
+        };
+
+
         public MainFrm()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Shift(object sender, EventArgs e)
         {
             Release(sender, e);
 
@@ -43,23 +43,7 @@ namespace Sequencer
                 parcel.Shift();
             }
 
-            //var index = 1;
-
-            //if (Parcels.Count > 0)
-            //    index = Parcels.LastOrDefault().Index + 1;
-
-            //var new_parcel = new Parcel(index);
-            //this.Controls.Add(new_parcel.Button);
-            //new_parcel.Button.Tag = new_parcel;
-
-            //new_parcel.Button.Click += Button_Click;
-
-
-            //Parcels.Add(new_parcel);
-
             Clock++;
-
-
         }
 
         private void Button_Click(object sender, EventArgs e)
@@ -71,16 +55,12 @@ namespace Sequencer
             parcel.Shift();
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void MainFrm_Load(object sender, EventArgs e)
-        {
-      
-            
-            trackBar1_Scroll(sender, e);
+        {      
+            trackBar1_Scroll(sender, e); // Config Timer Interval via Trackbar
+
+
+            // Load Below Gates
             for (int i = 0; i < 10; i++)
             {
                 var spot = new Gate();
@@ -91,6 +71,8 @@ namespace Sequencer
                 Gates.Add(spot);
 
             }
+
+            // Load Opon Gates
             for (int i = 0; i < 10; i++)
             {
                 var spot = new Gate();
@@ -110,12 +92,11 @@ namespace Sequencer
         private void LoadData()
         {
             progressBar.Value = 0;
-            progressBar.Maximum = OrderTemp.Count;
-           
+            progressBar.Maximum = Entries.Count;
 
-            foreach (var o in OrderTemp.Distinct().Reverse())
+            foreach (var o in Entries.Distinct().Reverse())
             {
-                Order.Push(o);
+                Stack.Push(o);
             }
         }
 
@@ -127,11 +108,11 @@ namespace Sequencer
             }
 
 
-            if (Order.Count < 1)
+            if (Stack.Count < 1)
                 return;
 
 
-            var new_parcel = new Parcel(Order.Pop());
+            var new_parcel = new Parcel(Stack.Pop());
             progressBar.PerformStep();
             this.Controls.Add(new_parcel.Button);
             new_parcel.Button.Tag = new_parcel;
@@ -163,9 +144,9 @@ namespace Sequencer
                 lblClock.Text = $"{minutes}:{seconds}";
             }
         }
-        private void timer1_Tick(object sender, EventArgs e)
-        {
 
+        private void Timer_Tick(object sender, EventArgs e)
+        {
             Push(sender, e);
             Release(sender, e);
         }
@@ -212,11 +193,6 @@ namespace Sequencer
         }
 
 
-        private void button4_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void picRuntime_Click(object sender, EventArgs e)
         {
             timer1.Enabled = !timer1.Enabled;
@@ -239,13 +215,8 @@ namespace Sequencer
 
         private void button3_Click(object sender, EventArgs e)
         {
-
-
             Reset();
-
             LoadData();
-
-
         }
 
         private void Reset()
@@ -255,7 +226,7 @@ namespace Sequencer
                 this.Controls.Remove(parcel.Button);
             }
             Parcels.Clear();
-            Order.Clear();
+            Stack.Clear();
 
             Clock = 0;
             timer1.Enabled = false;
@@ -284,7 +255,7 @@ namespace Sequencer
                 var listed_data = data.Split('\n').ToList();
                 if (listed_data.Count() > 1)
                 {
-                    OrderTemp.Clear();
+                    Entries.Clear();
                     foreach (var item in listed_data)
                     {
                         var n = 0;
@@ -299,12 +270,12 @@ namespace Sequencer
                         }
                         if (n > 0 && n<=20)
                         {
-                            OrderTemp.Add(n);
+                            Entries.Add(n);
                         }
 
                     }
-                    OrderTemp = OrderTemp.Distinct().ToList();
-                    lblLog.Text = $"{OrderTemp.Count()} Parcel(s) Loaded Successfuly";
+                    Entries = Entries.Distinct().ToList();
+                    lblLog.Text = $"{Entries.Count()} Parcel(s) Loaded Successfuly";
                     lblPersian.Text = "ورودی متنی بارگذاری شد";
                     panelLoad.BackColor = Color.Gold;
 
@@ -327,12 +298,7 @@ namespace Sequencer
                 panelLoad.BackColor = Color.Red;
                 lblPersian.Text = "فایل ورودی بایستی متنی باشد";
 
-
             }
-
-
-
-
 
             panelLoad.Visible = true;
 
@@ -366,7 +332,7 @@ namespace Sequencer
 
         private void lblLog_Click(object sender, EventArgs e)
         {
-            Entries();
+            EntriesDialog();
         }
 
         private void panelLoad_Paint(object sender, PaintEventArgs e)
@@ -393,13 +359,13 @@ namespace Sequencer
 
         private void button9_Click(object sender, EventArgs e)
         {
-            Entries();
+            EntriesDialog();
         }
 
-        private void Entries()
+        private void EntriesDialog()
         {
             var msg = "Parcel(s) List: ";
-            foreach (var item in OrderTemp)
+            foreach (var item in Entries)
             {
                 msg += Environment.NewLine + item;
             }

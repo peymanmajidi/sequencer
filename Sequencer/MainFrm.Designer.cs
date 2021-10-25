@@ -99,6 +99,9 @@ namespace Sequencer
             this.picBack = new System.Windows.Forms.PictureBox();
             this.picTruck = new System.Windows.Forms.PictureBox();
             this.timerTruck = new System.Windows.Forms.Timer(this.components);
+            this.toolStripStatusLabel16 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel17 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel18 = new System.Windows.Forms.ToolStripStatusLabel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picPower)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
@@ -401,7 +404,7 @@ namespace Sequencer
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(116, 19);
             this.label24.TabIndex = 318;
-            this.label24.Text = "Sequencer | v0.1";
+            this.label24.Text = "Sequencer | v0.2";
             // 
             // button11
             // 
@@ -531,6 +534,9 @@ namespace Sequencer
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel5,
             this.toolStripStatusLabel1,
+            this.toolStripStatusLabel18,
+            this.toolStripStatusLabel16,
+            this.toolStripStatusLabel17,
             this.toolStripStatusLabel13,
             this.toolStripStatusLabel15,
             this.toolStripStatusLabel14,
@@ -805,6 +811,31 @@ namespace Sequencer
             this.timerTruck.Interval = 2;
             this.timerTruck.Tick += new System.EventHandler(this.timerTruck_Tick);
             // 
+            // toolStripStatusLabel16
+            // 
+            this.toolStripStatusLabel16.BackColor = System.Drawing.SystemColors.Control;
+            this.toolStripStatusLabel16.ForeColor = System.Drawing.Color.Black;
+            this.toolStripStatusLabel16.Name = "toolStripStatusLabel16";
+            this.toolStripStatusLabel16.Size = new System.Drawing.Size(65, 17);
+            this.toolStripStatusLabel16.Text = "IP Address:";
+            // 
+            // toolStripStatusLabel17
+            // 
+            this.toolStripStatusLabel17.BackColor = System.Drawing.SystemColors.Control;
+            this.toolStripStatusLabel17.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripStatusLabel17.ForeColor = System.Drawing.Color.Black;
+            this.toolStripStatusLabel17.Name = "toolStripStatusLabel17";
+            this.toolStripStatusLabel17.Size = new System.Drawing.Size(72, 17);
+            this.toolStripStatusLabel17.Text = "172.16.1.64";
+            // 
+            // toolStripStatusLabel18
+            // 
+            this.toolStripStatusLabel18.BackColor = System.Drawing.SystemColors.Control;
+            this.toolStripStatusLabel18.ForeColor = System.Drawing.Color.Black;
+            this.toolStripStatusLabel18.Name = "toolStripStatusLabel18";
+            this.toolStripStatusLabel18.Size = new System.Drawing.Size(10, 17);
+            this.toolStripStatusLabel18.Text = "|";
+            // 
             // MainFrm
             // 
             this.AllowDrop = true;
@@ -943,6 +974,9 @@ namespace Sequencer
         private System.Windows.Forms.Button button12;
         private System.Windows.Forms.PictureBox picTruck;
         private System.Windows.Forms.Timer timerTruck;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel16;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel17;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel18;
     }
 }
 

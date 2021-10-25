@@ -246,8 +246,10 @@ namespace Sequencer
             Stack.Clear();
 
             Clock = 0;
-            timer1.Enabled = false;
+            timerTruck.Enabled= timer1.Enabled = false;
             picPower.Image = Properties.Resources.btt_off;
+            picTruck.Location = new Point(153, 490);
+
         }
 
         private void MainFrm_DragDrop(object sender, DragEventArgs e)

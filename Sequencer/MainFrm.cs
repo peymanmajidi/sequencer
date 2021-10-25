@@ -115,6 +115,10 @@ namespace Sequencer
             var new_parcel = new Parcel(Stack.Pop());
             progressBar.PerformStep();
             this.Controls.Add(new_parcel.Button);
+            btnProfiler.BringToFront();
+            picBack.BringToFront();
+
+            picTruck.BringToFront();
             new_parcel.Button.Tag = new_parcel;
 
             new_parcel.Button.Click += Button_Click;
@@ -128,6 +132,8 @@ namespace Sequencer
 
         int sec = 0;
         int min = 0;
+        int slower = 0;
+
         public int Clock
         {
             get
@@ -136,6 +142,10 @@ namespace Sequencer
             }
             set
             {
+                slower++;
+                if (slower % 2 == 0)
+                    return;
+
                 sec = value;
 
                 var seconds = (sec % 60) < 10 ? "0" + (sec % 60) : (sec % 60).ToString();
@@ -148,7 +158,14 @@ namespace Sequencer
         private void Timer_Tick(object sender, EventArgs e)
         {
             Push(sender, e);
+            btnProfiler.BringToFront();
+            picBack.BringToFront();
+
+            picTruck.BringToFront();
             Release(sender, e);
+            btnProfiler.BringToFront();
+            picBack.BringToFront();
+            picTruck.BringToFront();
         }
 
 
@@ -376,6 +393,27 @@ namespace Sequencer
         {
             panelLoad.Visible = false;
 
+        }
+
+        private void picTruck_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void timerTruck_Tick(object sender, EventArgs e)
+        {
+            picTruck.Location = new Point(picTruck.Location.X-5, picTruck.Location.Y);
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            timerTruck.Enabled = true;
+        }
+
+        private void MainFrm_Click(object sender, EventArgs e)
+        {
+            timerTruck.Enabled = true;
         }
     }
 }

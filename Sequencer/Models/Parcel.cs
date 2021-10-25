@@ -15,10 +15,13 @@ namespace Sequencer.Models
         const int INSIDE = 27;
         const int LEFT = 1050;
         const int TOP = 232;
+        const int PROFILER = 940;
+
 
 
         public int Index { get; set; }
         public bool Placed { get; set; }
+        public int Number { get; set; }
         public bool Back { get; set; }
         public bool Exit { get; set; }
         public Button Button { get; set; } = new Button() { Left = LEFT, Top = TOP, Size = new Size(SIZE, SIZE), BackColor = Color.Gold };
@@ -27,9 +30,9 @@ namespace Sequencer.Models
         public Parcel(int index)
         {
             Index = index;
-            Button.Text = Index.ToString();
+            Number = Index;
             Button.BackColor = Color.FromArgb(100, new Random().Next(0, 255), new Random().Next(0, 255));
-            Button.Font = new Font("Arial", 15);
+            Button.Font = new Font("B yekan", 16);
             Button.FlatStyle = FlatStyle.Popup;
             Button.ForeColor = Color.Black;
             if (index % 5 == 0)
@@ -86,6 +89,8 @@ namespace Sequencer.Models
 
 
             Button.Location = new Point(Button.Location.X - Button.Width - GAP, Button.Location.Y);
+            if (Button.Location.X < PROFILER)
+                Button.Text = Number.ToString();
             if (IsInSide())
             {
                 if (Gate.Row == Row.UP)
